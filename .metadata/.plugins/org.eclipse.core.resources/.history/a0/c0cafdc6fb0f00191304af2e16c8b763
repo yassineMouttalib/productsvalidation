@@ -1,0 +1,14 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "Assertstep")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AssertstepEntity {
+	private String type;
+
+}

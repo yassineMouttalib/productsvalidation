@@ -1,0 +1,11 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.common.api;
+
+import com.cap.productsvalidation.testsstepmanagement.general.common.api.ApplicationEntity;
+
+public interface Reststep extends ApplicationEntity {
+
+	public String getUrl();
+
+	public void setUrl(String url);
+
+}

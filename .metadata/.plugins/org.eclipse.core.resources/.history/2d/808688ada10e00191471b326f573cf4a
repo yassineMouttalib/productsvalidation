@@ -1,0 +1,35 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to;
+
+import io.oasp.module.jpa.common.api.to.SearchCriteriaTo;
+
+/**
+ * This is the {@link SearchCriteriaTo search criteria} {@link net.sf.mmm.util.transferobject.api.TransferObject TO}
+ * used to find {@link com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.common.api.Assertstep}s.
+ *
+ */
+public class AssertstepSearchCriteriaTo extends SearchCriteriaTo {
+
+
+  private static final long serialVersionUID = 1L;
+
+	private String type;
+
+  /**
+   * The constructor.
+   */
+  public AssertstepSearchCriteriaTo() {
+
+    super();
+  }
+
+  
+	public String getType() {
+		return type;
+	}
+
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+
+}

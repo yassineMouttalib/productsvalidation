@@ -1,0 +1,9 @@
+
+squid:S14887"^Immediately return this expression instead of assigning it to the temporary variable "result".(ÂÏÃøùÿÿÿÿH¶RMINORZ
+CODE_SMELL
+wsquid:S00119K"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ÃíäÊH¸RMINORZ
+CODE_SMELL
+lsquid:S11613":Add the "@Override" annotation above this method signature(ÏúÊÏøÿÿÿÿH¹RMAJORZ
+CODE_SMELL
+|squid:S00119n"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ŒöêÿÿÿÿÿH·RMINORZ
+CODE_SMELL

@@ -1,0 +1,22 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.cap.productsvalidation.testsstepmanagement.TeststepEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "ProductValidation")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AssertstepEntity extends TeststepEntity{
+private String type;
+
+public String getType() {
+	return type;
+}
+
+public void setType(String type) {
+	this.type = type;
+}
+}

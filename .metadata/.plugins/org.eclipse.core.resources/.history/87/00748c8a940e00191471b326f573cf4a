@@ -1,0 +1,5 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
+
+public class ReststepEntity {
+
+}

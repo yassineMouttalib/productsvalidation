@@ -1,0 +1,31 @@
+package com.cap.productsvalidation.testsstepmanagement.general.dataaccess.api;
+
+import javax.persistence.MappedSuperclass;
+
+import com.cap.productsvalidation.testsstepmanagement.general.common.api.ApplicationEntity;
+
+import io.oasp.module.jpa.dataaccess.api.AbstractPersistenceEntity;
+
+/**
+ * Abstract Entity for all Entities with an id and a version field.
+ */
+@MappedSuperclass
+public abstract class ApplicationPersistenceEntity  {
+
+	private static final long serialVersionUID = 1L;
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * The constructor.
+	 */
+	public ApplicationPersistenceEntity() {
+
+		super();
+	}
+
+}

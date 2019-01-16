@@ -1,0 +1,52 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.service.impl.rest;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.Reststepmanagement;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepCto;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.service.api.rest.ReststepmanagementRestService;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * The service implementation for REST calls in order to execute the logic of component {@link Reststepmanagement}.
+ */
+@Named("ReststepmanagementRestService")
+public class ReststepmanagementRestServiceImpl implements ReststepmanagementRestService{
+
+  @Inject
+  private Reststepmanagement reststepmanagement;
+
+  @Override
+  public ReststepEto getReststep(long id) {
+    return this.reststepmanagement.findReststep(id);
+  }
+
+  @Override
+  public ReststepEto saveReststep(ReststepEto reststep) {
+      return this.reststepmanagement.saveReststep(reststep);
+  }
+
+  @Override
+  public void deleteReststep(long id) {
+    this.reststepmanagement.deleteReststep(id);
+  }
+
+  @Override
+  public PaginatedListTo<ReststepEto> findReststepsByPost(ReststepSearchCriteriaTo searchCriteriaTo) {
+    return this.reststepmanagement.findReststepEtos(searchCriteriaTo);
+  }
+  
+  @Override
+  public ReststepCto getReststepCto(long id) {
+    return this.reststepmanagement.findReststepCto(id);
+  }
+
+  @Override
+  public PaginatedListTo<ReststepCto> findReststepCtosByPost(ReststepSearchCriteriaTo searchCriteriaTo) {
+    return this.reststepmanagement.findReststepCtos(searchCriteriaTo);
+  }
+}

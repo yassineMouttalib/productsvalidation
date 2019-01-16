@@ -1,0 +1,95 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.service.api.rest;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.Reststepmanagement;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepCto;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * The service interface for REST calls in order to execute the logic of
+ * component {@link Reststepmanagement}.
+ */
+@Path("/reststepmanagement/v1")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public interface ReststepmanagementRestService {
+
+	/**
+	 * Delegates to {@link Reststepmanagement#findReststep}.
+	 *
+	 * @param id
+	 *            the ID of the {@link ReststepEto}
+	 * @return the {@link ReststepEto}
+	 */
+	@GET
+	@Path("/reststep/{id}/")
+	public ReststepEto getReststep(@PathParam("id") long id);
+
+	/**
+	 * Delegates to {@link Reststepmanagement#saveReststep}.
+	 *
+	 * @param reststep
+	 *            the {@link ReststepEto} to be saved
+	 * @return the recently created {@link ReststepEto}
+	 */
+	@POST
+	@Path("/reststep/")
+	public ReststepEto saveReststep(ReststepEto reststep);
+
+	/**
+	 * Delegates to {@link Reststepmanagement#deleteReststep}.
+	 *
+	 * @param id
+	 *            ID of the {@link ReststepEto} to be deleted
+	 */
+	@DELETE
+	@Path("/reststep/{id}/")
+	public void deleteReststep(@PathParam("id") long id);
+
+	/**
+	 * Delegates to {@link Reststepmanagement#findReststepEtos}.
+	 *
+	 * @param searchCriteriaTo
+	 *            the pagination and search criteria to be used for finding
+	 *            reststeps.
+	 * @return the {@link PaginatedListTo list} of matching {@link ReststepEto}s.
+	 */
+	@Path("/reststep/search")
+	@POST
+	public PaginatedListTo<ReststepEto> findReststepsByPost(ReststepSearchCriteriaTo searchCriteriaTo);
+
+	/**
+	 * Delegates to {@link Reststepmanagement#findReststepCto}.
+	 *
+	 * @param id
+	 *            the ID of the {@link ReststepCto}
+	 * @return the {@link ReststepCto}
+	 */
+	@GET
+	@Path("/reststep/cto/{id}/")
+	public ReststepCto getReststepCto(@PathParam("id") long id);
+
+	/**
+	 * Delegates to {@link Reststepmanagement#findReststepCtos}.
+	 *
+	 * @param searchCriteriaTo
+	 *            the pagination and search criteria to be used for finding
+	 *            reststeps.
+	 * @return the {@link PaginatedListTo list} of matching {@link ReststepCto}s.
+	 */
+	@Path("/reststep/cto/search")
+	@POST
+	public PaginatedListTo<ReststepCto> findReststepCtosByPost(ReststepSearchCriteriaTo searchCriteriaTo);
+
+}

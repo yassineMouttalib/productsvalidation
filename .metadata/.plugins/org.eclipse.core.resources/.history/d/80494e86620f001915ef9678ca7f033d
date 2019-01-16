@@ -1,0 +1,88 @@
+package com.cap.productsvalidation.amanagement.service.api.rest;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.cap.productsvalidation.amanagement.logic.api.Amanagement;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaCto;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaEto;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaSearchCriteriaTo;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * The service interface for REST calls in order to execute the logic of component {@link Amanagement}.
+ */
+@Path("/amanagement/v1")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public interface AmanagementRestService {
+
+  /**
+  * Delegates to {@link Amanagement#findTa}.
+  *
+  * @param id the ID of the {@link TaEto}
+  * @return the {@link TaEto}
+  */
+  @GET
+  @Path("/ta/{id}/")
+  public TaEto getTa(@PathParam("id") long id);
+
+  /**
+   * Delegates to {@link Amanagement#saveTa}.
+   *
+   * @param ta the {@link TaEto} to be saved
+   * @return the recently created {@link TaEto}
+   */
+  @POST
+  @Path("/ta/")
+  public TaEto saveTa(TaEto ta);
+
+
+  /**
+   * Delegates to {@link Amanagement#deleteTa}.
+   *
+   * @param id ID of the {@link TaEto} to be deleted
+   */
+  @DELETE
+  @Path("/ta/{id}/")
+  public void deleteTa(@PathParam("id") long id);
+
+  /**
+   * Delegates to {@link Amanagement#findTaEtos}.
+   *
+   * @param searchCriteriaTo the pagination and search criteria to be used for finding tas.
+   * @return the {@link PaginatedListTo list} of matching {@link TaEto}s.
+   */
+  @Path("/ta/search")
+  @POST
+  public PaginatedListTo<TaEto> findTasByPost(TaSearchCriteriaTo searchCriteriaTo);
+    
+  
+  /**
+  * Delegates to {@link Amanagement#findTaCto}.
+  *
+  * @param id the ID of the {@link TaCto}
+  * @return the {@link TaCto}
+  */
+  @GET
+  @Path("/ta/cto/{id}/")
+  public TaCto getTaCto(@PathParam("id") long id);
+
+  /**
+   * Delegates to {@link Amanagement#findTaCtos}.
+   *
+   * @param searchCriteriaTo the pagination and search criteria to be used for finding tas.
+   * @return the {@link PaginatedListTo list} of matching {@link TaCto}s.
+   */
+  @Path("/ta/cto/search")
+  @POST
+  public PaginatedListTo<TaCto> findTaCtosByPost(TaSearchCriteriaTo searchCriteriaTo);
+
+}

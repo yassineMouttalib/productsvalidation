@@ -1,0 +1,69 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.impl.dao;
+
+import java.util.List;
+
+import javax.inject.Named;
+
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.AssertstepEntity;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.dao.AssertstepDao;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepSearchCriteriaTo;
+import com.cap.productsvalidation.testsstepmanagement.general.dataaccess.base.dao.ApplicationDaoImpl;
+import com.mysema.query.alias.Alias;
+import com.mysema.query.jpa.impl.JPAQuery;
+import com.mysema.query.types.path.EntityPathBase;
+
+import io.oasp.module.jpa.common.api.to.OrderByTo;
+import io.oasp.module.jpa.common.api.to.OrderDirection;
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * This is the implementation of {@link AssertstepDao}.
+ */
+@Named
+public class AssertstepDaoImpl extends ApplicationDaoImpl<AssertstepEntity> implements AssertstepDao {
+
+	/**
+	* The constructor.
+	*/
+	public AssertstepDaoImpl() {
+
+		super();
+	}
+
+  @Override
+  public Class<AssertstepEntity> getEntityClass() {
+  	return AssertstepEntity.class;
+ 	}
+
+ 	@Override
+  public PaginatedListTo<AssertstepEntity> findAssertsteps(AssertstepSearchCriteriaTo criteria) {
+
+    AssertstepEntity assertstep = Alias.alias(AssertstepEntity.class);
+    EntityPathBase<AssertstepEntity> alias = Alias.$(assertstep);
+    JPAQuery query = new JPAQuery(getEntityManager()).from(alias);
+
+        String type = criteria.getType();
+if (type != null) {
+query.where(Alias.$(assertstep.getType()).eq(type));
+}    addOrderBy(query, alias, assertstep, criteria.getSort());
+
+    return findPaginated(criteria, query, alias);
+  }
+
+  private void addOrderBy(JPAQuery query, EntityPathBase<AssertstepEntity> alias, AssertstepEntity assertstep, List<OrderByTo> sort) {
+    if (sort != null && !sort.isEmpty()) {
+      for (OrderByTo orderEntry : sort) {
+        switch(orderEntry.getName()) {
+          case "type":
+            if (OrderDirection.ASC.equals(orderEntry.getDirection())) {
+                query.orderBy(Alias.$(assertstep.getType()).asc());
+            } else {
+                query.orderBy(Alias.$(assertstep.getType()).desc());
+            }   
+          break;
+        }
+      }
+    }
+  }
+
+}

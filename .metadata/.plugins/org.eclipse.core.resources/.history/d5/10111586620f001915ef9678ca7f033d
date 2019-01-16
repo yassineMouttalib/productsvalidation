@@ -1,0 +1,116 @@
+package com.cap.productsvalidation.amanagement.logic.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.cap.productsvalidation.amanagement.dataaccess.api.TaEntity;
+import com.cap.productsvalidation.amanagement.dataaccess.api.dao.TaDao;
+import com.cap.productsvalidation.amanagement.logic.api.Amanagement;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaCto;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaEto;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaSearchCriteriaTo;
+import com.cap.productsvalidation.general.logic.base.AbstractComponentFacade;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+import io.oasp.module.jpa.common.api.to.PaginationResultTo;
+
+
+/**
+ * Implementation of component interface of amanagement
+ */
+@Named
+@Transactional
+public class AmanagementImpl extends AbstractComponentFacade implements Amanagement {
+	
+	/** Logger instance. */
+  private static final Logger LOG = LoggerFactory.getLogger(AmanagementImpl.class);
+
+  /** @see #getTaDao() */
+  @Inject
+  private TaDao taDao;
+
+  /**
+   * The constructor.
+   */
+  public AmanagementImpl() {
+      super();
+  }
+  
+	@Override
+	public TaEto findTa(Long id) {
+		LOG.debug("Get Ta with id {} from database.", id);
+		return getBeanMapper().map(getTaDao().findOne(id), TaEto.class);
+	}
+
+	@Override
+	public PaginatedListTo<TaEto> findTaEtos(TaSearchCriteriaTo criteria) {
+		criteria.limitMaximumPageSize(MAXIMUM_HIT_LIMIT);
+		PaginatedListTo<TaEntity> tas = getTaDao().findTas(criteria);
+		return mapPaginatedEntityList(tas, TaEto.class);
+	}
+
+	@Override
+	public boolean deleteTa(Long taId) {
+		TaEntity ta = getTaDao().find(taId);
+		getTaDao().delete(ta);
+		LOG.debug("The ta with id '{}' has been deleted.", taId);
+		return true;
+	}
+
+	@Override
+	public TaEto saveTa(TaEto ta) {
+		Objects.requireNonNull(ta, "ta");
+		TaEntity taEntity = getBeanMapper().map(ta, TaEntity.class);
+
+		//initialize, validate taEntity here if necessary
+		TaEntity resultEntity = getTaDao().save(taEntity);
+		LOG.debug("Ta with id '{}' has been created.", resultEntity.getId());
+
+		return getBeanMapper().map(resultEntity, TaEto.class);
+	}
+
+	/**
+	 * Returns the field 'taDao'.
+	 * @return the {@link TaDao} instance.
+	 */
+	public TaDao getTaDao() {
+
+		return this.taDao;
+	}
+		
+	@Override
+  public TaCto findTaCto(Long id) {
+    LOG.debug("Get TaCto with id {} from database.", id);
+    TaEntity entity = getTaDao().findOne(id);
+    TaCto cto = new TaCto();
+    cto.setTa(getBeanMapper().map(entity, TaEto.class));
+ 
+    return cto;
+  }
+
+  @Override
+  public PaginatedListTo<TaCto> findTaCtos(TaSearchCriteriaTo criteria) {
+    criteria.limitMaximumPageSize(MAXIMUM_HIT_LIMIT);
+    PaginatedListTo<TaEntity> tas = getTaDao().findTas(criteria);
+    List<TaCto> ctos = new ArrayList<>();
+    for (TaEntity entity : tas.getResult()) {
+      TaCto cto = new TaCto();
+      cto.setTa(getBeanMapper().map(entity, TaEto.class));
+      ctos.add(cto);
+      
+    }
+    PaginationResultTo pagResultTo = new PaginationResultTo(criteria.getPagination(), (long) ctos.size());
+    PaginatedListTo<TaCto> pagListTo = new PaginatedListTo(ctos, pagResultTo);
+    return pagListTo;
+  }
+
+
+}
