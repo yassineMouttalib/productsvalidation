@@ -1,0 +1,22 @@
+package com.cap.productsvalidation.amanagement.dataaccess.api;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "Ta")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Ta {
+
+	private String note;
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+}

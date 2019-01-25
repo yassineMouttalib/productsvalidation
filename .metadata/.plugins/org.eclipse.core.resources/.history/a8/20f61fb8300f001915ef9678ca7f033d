@@ -1,0 +1,22 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to;
+
+import com.cap.productsvalidation.testsstepmanagement.general.common.api.to.AbstractCto;
+
+/**
+ * Composite transport object of Assertstep
+ */
+public class AssertstepCto extends AbstractCto {
+
+	private static final long serialVersionUID = 1L;
+
+	private AssertstepEto assertstep;
+
+	public AssertstepEto getAssertstep() {
+		return assertstep;
+	}
+
+	public void setAssertstep(AssertstepEto assertstep) {
+		this.assertstep = assertstep;
+	}
+
+}

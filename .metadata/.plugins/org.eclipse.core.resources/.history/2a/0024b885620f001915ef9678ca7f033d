@@ -1,0 +1,60 @@
+package com.cap.productsvalidation.amanagement.logic.api;
+
+import com.cap.productsvalidation.amanagement.logic.api.to.TaEto;
+import com.cap.productsvalidation.amanagement.logic.api.to.TaSearchCriteriaTo;
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * Interface for Amanagement component.
+ */
+public interface Amanagement {
+  
+  /**
+   * Returns a Ta by its id 'id'.
+   *
+   * @param id The id 'id' of the Ta.
+   * @return The {@link TaEto} with id 'id'
+   */
+  TaEto findTa(Long id);
+  
+	/**
+   * Returns a paginated list of Tas matching the search criteria.
+   *
+   * @param criteria the {@link TaSearchCriteriaTo}.
+   * @return the {@link List} of matching {@link TaEto}s.
+   */
+	PaginatedListTo<TaEto> findTaEtos(TaSearchCriteriaTo criteria);
+	
+	/**
+   * Deletes a ta from the database by its id 'taId'.
+   *
+   * @param taId Id of the ta to delete
+   * @return boolean <code>true</code> if the ta can be deleted, <code>false</code> otherwise
+   */
+  boolean deleteTa(Long taId);
+  
+	/**
+   * Saves a ta and store it in the database.
+   *
+   * @param ta the {@link TaEto} to create.
+   * @return the new {@link TaEto} that has been saved with ID and version.
+   */
+  TaEto saveTa(TaEto ta);
+  
+    /**
+   * Returns a composite Ta by its id 'id'.
+   *
+   * @param id The id 'id' of the Ta.
+   * @return The {@link TaCto} with id 'id'
+   */
+  TaCto findTaCto(Long id);
+  
+  /**
+   * Returns a paginated list of composite Tas matching the search criteria.
+   *
+   * @param criteria the {@link TaSearchCriteriaTo}.
+   * @return the {@link List} of matching {@link TaCto}s.
+   */
+  PaginatedListTo<TaCto> findTaCtos(TaSearchCriteriaTo criteria);
+  
+}

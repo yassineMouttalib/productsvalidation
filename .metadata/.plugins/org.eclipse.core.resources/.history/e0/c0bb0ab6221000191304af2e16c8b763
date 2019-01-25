@@ -1,0 +1,60 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api;
+
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * Interface for Reststepmanagement component.
+ */
+public interface Reststepmanagement {
+  
+  /**
+   * Returns a Reststep by its id 'id'.
+   *
+   * @param id The id 'id' of the Reststep.
+   * @return The {@link ReststepEto} with id 'id'
+   */
+  ReststepEto findReststep(Long id);
+  
+	/**
+   * Returns a paginated list of Reststeps matching the search criteria.
+   *
+   * @param criteria the {@link ReststepSearchCriteriaTo}.
+   * @return the {@link List} of matching {@link ReststepEto}s.
+   */
+	PaginatedListTo<ReststepEto> findReststepEtos(ReststepSearchCriteriaTo criteria);
+	
+	/**
+   * Deletes a reststep from the database by its id 'reststepId'.
+   *
+   * @param reststepId Id of the reststep to delete
+   * @return boolean <code>true</code> if the reststep can be deleted, <code>false</code> otherwise
+   */
+  boolean deleteReststep(Long reststepId);
+  
+	/**
+   * Saves a reststep and store it in the database.
+   *
+   * @param reststep the {@link ReststepEto} to create.
+   * @return the new {@link ReststepEto} that has been saved with ID and version.
+   */
+  ReststepEto saveReststep(ReststepEto reststep);
+  
+    /**
+   * Returns a composite Reststep by its id 'id'.
+   *
+   * @param id The id 'id' of the Reststep.
+   * @return The {@link ReststepCto} with id 'id'
+   */
+  ReststepCto findReststepCto(Long id);
+  
+  /**
+   * Returns a paginated list of composite Reststeps matching the search criteria.
+   *
+   * @param criteria the {@link ReststepSearchCriteriaTo}.
+   * @return the {@link List} of matching {@link ReststepCto}s.
+   */
+  PaginatedListTo<ReststepCto> findReststepCtos(ReststepSearchCriteriaTo criteria);
+  
+}

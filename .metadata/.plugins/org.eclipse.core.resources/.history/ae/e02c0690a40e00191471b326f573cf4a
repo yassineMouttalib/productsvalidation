@@ -1,0 +1,33 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to;
+
+import io.oasp.module.jpa.common.api.to.SearchCriteriaTo;
+
+/**
+ * This is the {@link SearchCriteriaTo search criteria}
+ * {@link net.sf.mmm.util.transferobject.api.TransferObject TO} used to find
+ * {@link com.cap.productsvalidation.testsstepmanagement.reststepmanagement.common.api.Reststep}s.
+ *
+ */
+public class ReststepSearchCriteriaTo extends SearchCriteriaTo {
+
+	private static final long serialVersionUID = 1L;
+
+	private String url;
+
+	/**
+	 * The constructor.
+	 */
+	public ReststepSearchCriteriaTo() {
+
+		super();
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+}

@@ -1,0 +1,53 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.service.impl.rest;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.Assertstepmanagement;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepCto;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepEto;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepSearchCriteriaTo;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.service.api.rest.AssertstepmanagementRestService;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * The service implementation for REST calls in order to execute the logic of
+ * component {@link Assertstepmanagement}.
+ */
+@Named("AssertstepmanagementRestService")
+public class AssertstepmanagementRestServiceImpl implements AssertstepmanagementRestService {
+
+	@Inject
+	private Assertstepmanagement assertstepmanagement;
+
+	@Override
+	public AssertstepEto getAssertstep(long id) {
+		return this.assertstepmanagement.findAssertstep(id);
+	}
+
+	@Override
+	public AssertstepEto saveAssertstep(AssertstepEto assertstep) {
+		return this.assertstepmanagement.saveAssertstep(assertstep);
+	}
+
+	@Override
+	public void deleteAssertstep(long id) {
+		this.assertstepmanagement.deleteAssertstep(id);
+	}
+
+	@Override
+	public PaginatedListTo<AssertstepEto> findAssertstepsByPost(AssertstepSearchCriteriaTo searchCriteriaTo) {
+		return this.assertstepmanagement.findAssertstepEtos(searchCriteriaTo);
+	}
+
+	@Override
+	public AssertstepCto getAssertstepCto(long id) {
+		return this.assertstepmanagement.findAssertstepCto(id);
+	}
+
+	@Override
+	public PaginatedListTo<AssertstepCto> findAssertstepCtosByPost(AssertstepSearchCriteriaTo searchCriteriaTo) {
+		return this.assertstepmanagement.findAssertstepCtos(searchCriteriaTo);
+	}
+}

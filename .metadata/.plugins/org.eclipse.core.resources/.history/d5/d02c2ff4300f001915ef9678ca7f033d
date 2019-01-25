@@ -1,0 +1,38 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.cap.productsvalidation.testsstepmanagement.TeststepEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "Reststep")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ReststepEntity extends TeststepEntity implements Reststep {
+
+	private String url;
+
+	private static final long serialVersionUID = 1L;
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	@Override
+	public void setModificationCounter(int version) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getModificationCounter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

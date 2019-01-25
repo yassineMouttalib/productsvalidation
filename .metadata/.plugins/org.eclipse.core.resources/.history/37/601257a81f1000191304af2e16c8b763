@@ -1,0 +1,24 @@
+package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.dao;
+
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.AssertstepEntity;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepSearchCriteriaTo;
+import com.cap.productsvalidation.testsstepmanagement.general.dataaccess.api.dao.ApplicationDao;
+
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * Data access interface for Assertstep entities
+ */
+public interface AssertstepDao extends ApplicationDao<AssertstepEntity> {
+
+	/**
+	 * Finds the {@link AssertstepEntity assertsteps} matching the given
+	 * {@link AssertstepSearchCriteriaTo}.
+	 *
+	 * @param criteria
+	 *            is the {@link AssertstepSearchCriteriaTo}.
+	 * @return the {@link PaginatedListTo} with the matching
+	 *         {@link AssertstepEntity} objects.
+	 */
+	PaginatedListTo<AssertstepEntity> findAssertsteps(AssertstepSearchCriteriaTo criteria);
+}

@@ -1,0 +1,16 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
+
+public class CB extends CA implements IA, IB{
+
+
+	public String getA() {
+
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		IB.Id= 10L;
+		CB cb = new  CB();
+		System.out.println(cb.Id);
+	}
+}

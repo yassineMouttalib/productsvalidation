@@ -1,0 +1,49 @@
+package com.cap.productsvalidation.assertstepmanagement.dataaccess.api;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.cap.productsvalidation.testsstepmanagement.TeststepEntity;
+import com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.common.api.Assertstep;
+import com.cap.productsvalidation.testsstepmanagement.general.dataaccess.api.ApplicationPersistenceEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "Assertstep")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AssertstepEntity extends TeststepEntity, ApplicationPersistenceEntity implements Assertstep {
+
+	private String type;
+
+	private static final long serialVersionUID = 1L;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	@Id
+	@GeneratedValue
+	private Long id; 
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}

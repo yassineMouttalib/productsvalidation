@@ -1,0 +1,10 @@
+package com.cap.productsvalidation.testsstepmanagement;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class TeststepEntity {
+
+	private String name;
+	
+}

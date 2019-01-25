@@ -1,0 +1,9 @@
+
+i"squid:SwitchLastCaseIsDefaultCheck?""Add a default case to this switch.(šÙúòH™RCRITICALZ
+CODE_SMELL
+‡squid:S3776;"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÕŞ¯ÓúÿÿÿÿHšRCRITICALZ
+CODE_SMELL
+squid:S1301?"KReplace this "switch" statement by "if" statements to increase readability.(šÙúò8í•±É-H›RMINORZ
+CODE_SMELL
+^squid:S1172;",Remove this unused method parameter "alias".(ÕŞ¯ÓúÿÿÿÿHœRMAJORZ
+CODE_SMELL

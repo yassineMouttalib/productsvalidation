@@ -1,0 +1,20 @@
+package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api.dao;
+
+import com.cap.productsvalidation.testsstepmanagement.general.dataaccess.api.dao.ApplicationDao;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api.ReststepEntity;
+import com.cap.productsvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+import io.oasp.module.jpa.common.api.to.PaginatedListTo;
+
+/**
+ * Data access interface for Reststep entities
+ */
+public interface ReststepDao extends ApplicationDao<ReststepEntity> {
+  
+  /**
+   * Finds the {@link ReststepEntity reststeps} matching the given {@link ReststepSearchCriteriaTo}.
+   *
+   * @param criteria is the {@link ReststepSearchCriteriaTo}.
+   * @return the {@link PaginatedListTo} with the matching {@link ReststepEntity} objects.
+   */
+  PaginatedListTo<ReststepEntity> findReststeps(ReststepSearchCriteriaTo criteria);
+}

@@ -1,0 +1,14 @@
+package com.cap.productsvalidation.testsstepmanagement;
+
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@MappedSuperclass
+public class TeststepEntity {
+
+	private String name;
+	
+}

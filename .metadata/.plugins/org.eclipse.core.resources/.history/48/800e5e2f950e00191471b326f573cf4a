@@ -1,0 +1,15 @@
+package com.cap.productsvalidation.testsstepmanagement;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "ProductValidation")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TeststepEntity {
+
+	private String name;
+	
+}
