@@ -1,8 +1,0 @@
-package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
-
-public abstract class CA {
-
-	public String getFromAbstract() {
-		return "hello";
-	}
-}

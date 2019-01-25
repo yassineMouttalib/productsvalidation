@@ -1,7 +1,0 @@
-
-squid:S14885"^Immediately return this expression instead of assigning it to the temporary variable "result".(ÂÏÃøùÿÿÿÿHŠRMINORZ
-CODE_SMELL
-wsquid:S00119D"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ÃíäÊH‹RMINORZ
-CODE_SMELL
-|squid:S00119_"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ŒöêÿÿÿÿÿHŒRMINORZ
-CODE_SMELL

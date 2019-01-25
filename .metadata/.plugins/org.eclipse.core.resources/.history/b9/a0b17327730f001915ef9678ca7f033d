@@ -1,8 +1,0 @@
-package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
-
-public interface IB {
-
-	public Long Id=0L;
-	
-	
-}

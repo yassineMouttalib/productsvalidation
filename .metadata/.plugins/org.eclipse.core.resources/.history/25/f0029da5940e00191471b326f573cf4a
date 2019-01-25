@@ -1,5 +1,0 @@
-package com.cap.productsvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api;
-
-public class AssertstepEntity {
-private String type;
-}

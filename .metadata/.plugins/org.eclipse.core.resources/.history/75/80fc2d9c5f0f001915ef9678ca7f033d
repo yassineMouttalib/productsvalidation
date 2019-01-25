@@ -1,5 +1,0 @@
-package com.cap.productsvalidation.testsstepmanagement.reststepmanagement.dataaccess.api;
-
-public interface IA {
-
-}
