@@ -1,0 +1,66 @@
+package com.cap.productvalidation.productvalidationmanagement.service.api.rest;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.data.domain.Page;
+
+import com.cap.productvalidation.productvalidationmanagement.logic.api.Productvalidationmanagement;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.to.ProductValidationEto;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.to.ProductValidationSearchCriteriaTo;
+
+/**
+ * The service interface for REST calls in order to execute the logic of component {@link Productvalidationmanagement}.
+ */
+@Path("/productvalidationmanagement/v1")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public interface ProductvalidationmanagementRestService {
+
+  /**
+  * Delegates to {@link Productvalidationmanagement#findProductValidation}.
+  *
+  * @param id the ID of the {@link ProductValidationEto}
+  * @return the {@link ProductValidationEto}
+  */
+  @GET
+  @Path("/productvalidation/{id}/")
+  public ProductValidationEto getProductValidation(@PathParam("id") long id);
+
+  /**
+   * Delegates to {@link Productvalidationmanagement#saveProductValidation}.
+   *
+   * @param productvalidation the {@link ProductValidationEto} to be saved
+   * @return the recently created {@link ProductValidationEto}
+   */
+  @POST
+  @Path("/productvalidation/")
+  public ProductValidationEto saveProductValidation(ProductValidationEto productvalidation);
+
+
+  /**
+   * Delegates to {@link Productvalidationmanagement#deleteProductValidation}.
+   *
+   * @param id ID of the {@link ProductValidationEto} to be deleted
+   */
+  @DELETE
+  @Path("/productvalidation/{id}/")
+  public void deleteProductValidation(@PathParam("id") long id);
+
+  /**
+   * Delegates to {@link Productvalidationmanagement#findProductValidationEtos}.
+   *
+   * @param searchCriteriaTo the pagination and search criteria to be used for finding productvalidations.
+   * @return the {@link Page list} of matching {@link ProductValidationEto}s.
+   */
+  @Path("/productvalidation/search")
+  @POST
+  public Page<ProductValidationEto> findProductValidations(ProductValidationSearchCriteriaTo searchCriteriaTo);
+
+}

@@ -1,0 +1,28 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.usecase;
+
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+
+/**
+ * Interface of UcManageReststep to centralize documentation and signatures of
+ * methods.
+ */
+public interface UcManageReststep {
+
+	/**
+	 * Deletes a reststep from the database by its id 'reststepId'.
+	 *
+	 * @param reststepId Id of the reststep to delete
+	 * @return boolean <code>true</code> if the reststep can be deleted,
+	 *         <code>false</code> otherwise
+	 */
+	boolean deleteReststep(long reststepId);
+
+	/**
+	 * Saves a reststep and store it in the database.
+	 *
+	 * @param reststep the {@link ReststepEto} to create.
+	 * @return the new {@link ReststepEto} that has been saved with ID and version.
+	 */
+	ReststepEto saveReststep(ReststepEto reststep);
+
+}

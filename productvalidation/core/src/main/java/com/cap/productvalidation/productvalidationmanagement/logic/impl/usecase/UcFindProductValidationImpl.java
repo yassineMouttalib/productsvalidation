@@ -1,0 +1,47 @@
+package com.cap.productvalidation.productvalidationmanagement.logic.impl.usecase;
+
+import java.util.Optional;
+
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
+import com.cap.productvalidation.productvalidationmanagement.dataaccess.api.ProductValidationEntity;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.to.ProductValidationEto;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.to.ProductValidationSearchCriteriaTo;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.usecase.UcFindProductValidation;
+import com.cap.productvalidation.productvalidationmanagement.logic.base.usecase.AbstractProductValidationUc;
+
+/**
+ * Use case implementation for searching, filtering and getting
+ * ProductValidations
+ */
+@Named
+@Validated
+@Transactional
+public class UcFindProductValidationImpl extends AbstractProductValidationUc implements UcFindProductValidation {
+
+	/** Logger instance. */
+	private static final Logger LOG = LoggerFactory.getLogger(UcFindProductValidationImpl.class);
+
+	@Override
+	public ProductValidationEto findProductValidation(long id) {
+		LOG.debug("Get ProductValidation with id {} from database.", id);
+		Optional<ProductValidationEntity> foundEntity = getProductValidationRepository().findById(id);
+		if (foundEntity.isPresent())
+			return getBeanMapper().map(foundEntity.get(), ProductValidationEto.class);
+		else
+			return null;
+	}
+
+	@Override
+	public Page<ProductValidationEto> findProductValidations(ProductValidationSearchCriteriaTo criteria) {
+		Page<ProductValidationEntity> productvalidations = getProductValidationRepository().findByCriteria(criteria);
+		return mapPaginatedEntityList(productvalidations, ProductValidationEto.class);
+	}
+
+}

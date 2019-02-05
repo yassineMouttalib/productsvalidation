@@ -1,0 +1,29 @@
+package com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.api.usecase;
+
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepEto;
+
+/**
+ * Interface of UcManageAssertstep to centralize documentation and signatures of
+ * methods.
+ */
+public interface UcManageAssertstep {
+
+	/**
+	 * Deletes a assertstep from the database by its id 'assertstepId'.
+	 *
+	 * @param assertstepId Id of the assertstep to delete
+	 * @return boolean <code>true</code> if the assertstep can be deleted,
+	 *         <code>false</code> otherwise
+	 */
+	boolean deleteAssertstep(long assertstepId);
+
+	/**
+	 * Saves a assertstep and store it in the database.
+	 *
+	 * @param assertstep the {@link AssertstepEto} to create.
+	 * @return the new {@link AssertstepEto} that has been saved with ID and
+	 *         version.
+	 */
+	AssertstepEto saveAssertstep(AssertstepEto assertstep);
+
+}

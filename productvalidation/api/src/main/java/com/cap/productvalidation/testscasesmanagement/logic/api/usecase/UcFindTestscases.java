@@ -1,0 +1,28 @@
+package com.cap.productvalidation.testscasesmanagement.logic.api.usecase;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesEto;
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesSearchCriteriaTo;
+
+public interface UcFindTestscases {
+
+	/**
+	 * Returns a Testscases by its id 'id'.
+	 *
+	 * @param id The id 'id' of the Testscases.
+	 * @return The {@link TestscasesEto} with id 'id'
+	 */
+	TestscasesEto findTestscases(long id);
+
+	/**
+	 * Returns a paginated list of Testscasess matching the search criteria.
+	 *
+	 * @param criteria the {@link TestscasesSearchCriteriaTo}.
+	 * @return the {@link List} of matching {@link TestscasesEto}s.
+	 */
+	Page<TestscasesEto> findTestscasess(TestscasesSearchCriteriaTo criteria);
+
+}

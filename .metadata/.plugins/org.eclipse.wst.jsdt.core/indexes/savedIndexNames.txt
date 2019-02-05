@@ -1,7 +1,7 @@
-INDEX VERSION 1.4+C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_2.4.0\workspaces\productValidation\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2319976088.index
-3507488432.index
-1298247301.index
-3341710115.index
-132154050.index
-614741852.index
+INDEX VERSION 1.4+C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4228118035.index
+3841499185.index
+93400494.index
+505760258.index
+1954802005.index
+3312151054.index

@@ -1,0 +1,49 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.impl.usecase;
+
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.usecase.UcManageReststep;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.base.usecase.AbstractReststepUc;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.dataaccess.api.ReststepEntity;
+
+import java.util.Objects;
+
+import javax.inject.Named;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * Use case implementation for modifying and deleting Reststeps
+ */
+@Named
+@Validated
+@Transactional
+public class UcManageReststepImpl extends AbstractReststepUc implements UcManageReststep {
+
+  /** Logger instance. */
+  private static final Logger LOG = LoggerFactory.getLogger(UcManageReststepImpl.class);
+
+  @Override
+  public boolean deleteReststep(long reststepId) {
+
+    ReststepEntity reststep = getReststepRepository().find(reststepId);
+    getReststepRepository().delete(reststep);
+    LOG.debug("The reststep with id '{}' has been deleted.", reststepId);
+    return true;
+  }
+
+  @Override
+  public ReststepEto saveReststep(ReststepEto reststep) {
+
+   Objects.requireNonNull(reststep, "reststep");
+
+	 ReststepEntity reststepEntity = getBeanMapper().map(reststep, ReststepEntity.class);
+
+   //initialize, validate reststepEntity here if necessary
+   ReststepEntity resultEntity = getReststepRepository().save(reststepEntity);
+   LOG.debug("Reststep with id '{}' has been created.",resultEntity.getId());
+   return getBeanMapper().map(resultEntity, ReststepEto.class);
+  }
+}

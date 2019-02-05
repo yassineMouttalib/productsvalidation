@@ -1,0 +1,50 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to;
+
+import com.cap.productvalidation.testsstepmanagement.general.common.api.to.AbstractSearchCriteriaTo;
+import com.devonfw.module.basic.common.api.query.StringSearchConfigTo;
+
+/**
+ * {@link SearchCriteriaTo} to find instances of
+ * {@link com.cap.productvalidation.testsstepmanagement.reststepmanagement.common.api.Reststep}s.
+ */
+public class ReststepSearchCriteriaTo extends AbstractSearchCriteriaTo {
+
+	private static final long serialVersionUID = 1L;
+
+	private String url;
+	private StringSearchConfigTo urlOption;
+
+	/**
+	 * @return urlId
+	 */
+
+	public String getUrl() {
+		return url;
+	}
+
+	/**
+	 * @param url setter for url attribute
+	 */
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	/**
+	 * @return the {@link StringSearchConfigTo} used to search for {@link #getUrl()
+	 *         url}.
+	 */
+	public StringSearchConfigTo getUrlOption() {
+
+		return this.urlOption;
+	}
+
+	/**
+	 * @param urlOption new value of {@link #getUrlOption()}.
+	 */
+	public void setUrlOption(StringSearchConfigTo urlOption) {
+
+		this.urlOption = urlOption;
+	}
+
+}

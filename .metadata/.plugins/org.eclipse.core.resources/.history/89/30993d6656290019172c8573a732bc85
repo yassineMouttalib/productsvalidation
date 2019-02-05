@@ -1,0 +1,47 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.impl.usecase;
+
+import java.util.Optional;
+
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.dataaccess.api.ReststepEntity;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.usecase.UcFindReststep;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.base.usecase.AbstractReststepUc;
+
+/**
+ * Use case implementation for searching, filtering and getting Reststeps
+ */
+@Named
+@Validated
+@Transactional
+public class UcFindReststepImpl extends AbstractReststepUc implements UcFindReststep {
+
+	  /** Logger instance. */
+    private static final Logger LOG = LoggerFactory.getLogger(UcFindReststepImpl.class);
+
+
+    @Override
+    public ReststepEto findReststep(long id) {
+      LOG.debug("Get Reststep with id {} from database.", id);
+      Optional<ReststepEntity> foundEntity = getReststepRepository().findById(id);
+      if (foundEntity.isPresent())
+        return getBeanMapper().map(foundEntity.get(), ReststepEto.class);
+      else
+        return null;
+    }
+
+    @Override
+    public Page<ReststepEto> findReststeps(ReststepSearchCriteriaTo criteria) {
+      Page<ReststepEntity> reststeps = getReststepRepository().findByCriteria(criteria);
+    return mapPaginatedEntityList(reststeps, ReststepEto.class);
+  }
+
+}

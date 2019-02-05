@@ -1,0 +1,49 @@
+package com.cap.productvalidation.productvalidationmanagement.logic.impl.usecase;
+
+import java.util.Objects;
+
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
+import com.cap.productvalidation.productvalidationmanagement.dataaccess.api.ProductValidationEntity;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.to.ProductValidationEto;
+import com.cap.productvalidation.productvalidationmanagement.logic.api.usecase.UcManageProductValidation;
+import com.cap.productvalidation.productvalidationmanagement.logic.base.usecase.AbstractProductValidationUc;
+
+/**
+ * Use case implementation for modifying and deleting ProductValidations
+ */
+@Named
+@Validated
+@Transactional
+public class UcManageProductValidationImpl extends AbstractProductValidationUc implements UcManageProductValidation {
+
+  /** Logger instance. */
+  private static final Logger LOG = LoggerFactory.getLogger(UcManageProductValidationImpl.class);
+
+  @Override
+  public boolean deleteProductValidation(long productValidationId) {
+
+    ProductValidationEntity productValidation = getProductValidationRepository().find(productValidationId);
+    getProductValidationRepository().delete(productValidation);
+    LOG.debug("The productValidation with id '{}' has been deleted.", productValidationId);
+    return true;
+  }
+
+  @Override
+  public ProductValidationEto saveProductValidation(ProductValidationEto productValidation) {
+
+   Objects.requireNonNull(productValidation, "productValidation");
+
+	 ProductValidationEntity productValidationEntity = getBeanMapper().map(productValidation, ProductValidationEntity.class);
+
+   //initialize, validate productValidationEntity here if necessary
+   ProductValidationEntity resultEntity = getProductValidationRepository().save(productValidationEntity);
+   LOG.debug("ProductValidation with id '{}' has been created.",resultEntity.getId());
+   return getBeanMapper().map(resultEntity, ProductValidationEto.class);
+  }
+}

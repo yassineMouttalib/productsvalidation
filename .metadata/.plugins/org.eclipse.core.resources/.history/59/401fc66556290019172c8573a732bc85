@@ -1,0 +1,44 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.service.impl.rest;
+
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.common.api.Reststep;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.Reststepmanagement;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.service.api.rest.ReststepmanagementRestService;
+
+import org.springframework.data.domain.Page;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.ws.rs.BadRequestException;
+import javax.ws.rs.NotFoundException;
+
+/**
+ * The service implementation for REST calls in order to execute the logic of component {@link Reststepmanagement}.
+ */
+@Named("ReststepmanagementRestService")
+public class ReststepmanagementRestServiceImpl implements ReststepmanagementRestService{
+
+  @Inject
+  private Reststepmanagement reststepmanagement;
+
+  @Override
+  public ReststepEto getReststep(long id) {
+    return this.reststepmanagement.findReststep(id);
+  }
+
+  @Override
+  public ReststepEto saveReststep(ReststepEto reststep) {
+      return this.reststepmanagement.saveReststep(reststep);
+  }
+
+  @Override
+  public void deleteReststep(long id) {
+    this.reststepmanagement.deleteReststep(id);
+  }
+
+  @Override
+  public Page<ReststepEto> findReststeps(ReststepSearchCriteriaTo searchCriteriaTo) {
+    return this.reststepmanagement.findReststeps(searchCriteriaTo);
+  }
+}

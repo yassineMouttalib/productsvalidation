@@ -1,0 +1,49 @@
+package com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.impl.usecase;
+
+import java.util.Objects;
+
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.AssertstepEntity;
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.api.to.AssertstepEto;
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.api.usecase.UcManageAssertstep;
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.base.usecase.AbstractAssertstepUc;
+
+/**
+ * Use case implementation for modifying and deleting Assertsteps
+ */
+@Named
+@Validated
+@Transactional
+public class UcManageAssertstepImpl extends AbstractAssertstepUc implements UcManageAssertstep {
+
+  /** Logger instance. */
+  private static final Logger LOG = LoggerFactory.getLogger(UcManageAssertstepImpl.class);
+
+  @Override
+  public boolean deleteAssertstep(long assertstepId) {
+
+    AssertstepEntity assertstep = getAssertstepRepository().find(assertstepId);
+    getAssertstepRepository().delete(assertstep);
+    LOG.debug("The assertstep with id '{}' has been deleted.", assertstepId);
+    return true;
+  }
+
+  @Override
+  public AssertstepEto saveAssertstep(AssertstepEto assertstep) {
+
+   Objects.requireNonNull(assertstep, "assertstep");
+
+	 AssertstepEntity assertstepEntity = getBeanMapper().map(assertstep, AssertstepEntity.class);
+
+   //initialize, validate assertstepEntity here if necessary
+   AssertstepEntity resultEntity = getAssertstepRepository().save(assertstepEntity);
+   LOG.debug("Assertstep with id '{}' has been created.",resultEntity.getId());
+   return getBeanMapper().map(resultEntity, AssertstepEto.class);
+  }
+}

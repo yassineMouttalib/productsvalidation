@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1545214613224_0" label="Window Working Set" name="Aggregate for window 1545214613223"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549377561797_0" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=productvalidation-core/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-core/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-api/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-server/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-server/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549377561818_1" label="Java Test Sources" name="Java Test Sources">
+<item elementID="=productvalidation-core/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-core/src\/test\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-server/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=productvalidation-server/src\/test\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549377609520_3" label="productvalidation" name="productvalidation">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/productvalidation" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/productvalidation-core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/productvalidation-api" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/productvalidation-server" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549377566942_2" label="Window Working Set" name="Aggregate for window 1549377566941"/>
 </workingSetManager>

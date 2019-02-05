@@ -1,0 +1,229 @@
+2019-02-05 15:39:36,160 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-02-05 15:40:11,154 [Worker-4: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: com.cap:productvalidation:0.0.1 @ C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\pom.xml.
+2019-02-05 15:40:12,797 [Worker-4: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cap:productvalidation-core:0.0.1 @ C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\core\pom.xml.
+2019-02-05 15:40:13,229 [Worker-4: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/cap/productvalidation-api/0.0.1/productvalidation-api-0.0.1.pom
+2019-02-05 15:40:13,234 [Worker-4: Importing Maven projects] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.cap:productvalidation-api:jar:0.0.1 is missing, no dependency information available
+2019-02-05 15:40:16,207 [Worker-4: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/cap/productvalidation-api/0.0.1/productvalidation-api-0.0.1.jar
+2019-02-05 15:40:18,752 [Worker-0: Download sources and javadoc] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.cap:productvalidation-api:jar:0.0.1 is missing, no dependency information available
+2019-02-05 15:40:19,160 [Worker-4: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-core/src/main/java
+2019-02-05 15:40:19,161 [Worker-4: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /productvalidation-core/src/main/resources
+2019-02-05 15:40:19,204 [Worker-4: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-core/src/test/java
+2019-02-05 15:40:19,205 [Worker-4: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /productvalidation-core/src/test/resources
+2019-02-05 15:40:24,093 [Worker-0: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/cap/productvalidation-api/0.0.1/productvalidation-api-0.0.1-sources.jar
+2019-02-05 15:40:24,115 [Worker-0: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for com.cap:productvalidation-api:0.0.1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.cap:productvalidation-api:jar:sources:0.0.1
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl$5.call(MavenImpl.java:776) ~[org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl$5.call(MavenImpl.java:1) ~[org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:112) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:743) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:720) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:279) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:254) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:221) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob$1.call(DownloadSourcesJob.java:137) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob$1.call(DownloadSourcesJob.java:1) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:135) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2019-02-05 15:40:25,720 [Worker-4: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 16 sec
+2019-02-05 15:40:26,067 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/cap/productvalidation-api/0.0.1/productvalidation-api-0.0.1-javadoc.jar
+2019-02-05 15:40:26,072 [Worker-11: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for com.cap:productvalidation-api:0.0.1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.cap:productvalidation-api:jar:javadoc:0.0.1
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl$5.call(MavenImpl.java:776) ~[org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl$5.call(MavenImpl.java:1) ~[org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:112) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:743) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:720) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:279) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:265) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:221) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob$1.call(DownloadSourcesJob.java:137) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob$1.call(DownloadSourcesJob.java:1) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:135) [org.eclipse.m2e.jdt_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2019-02-05 15:40:28,092 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:40:28,132 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:40:28,627 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:40:28,627 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-05 15:41:25,949 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:41:25,951 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:41:25,954 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:41:25,954 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:44:12,608 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cap:productvalidation-api:0.0.1 @ C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\pom.xml.
+2019-02-05 15:44:14,702 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.cap:productvalidation-server:0.0.1 @ C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\server\pom.xml.
+2019-02-05 15:44:16,006 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-core: com.cap:productvalidation-core:0.0.1 with classifier  to /productvalidation-core/eclipse-target/classes
+2019-02-05 15:44:16,006 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier  to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:16,696 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cap:productvalidation-core:0.0.1 @ C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\core\pom.xml.
+2019-02-05 15:44:16,964 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier  to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:21,641 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-api/src/main/java
+2019-02-05 15:44:21,642 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-api/src/test/java
+2019-02-05 15:44:22,253 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-server/src/main/java
+2019-02-05 15:44:22,254 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /productvalidation-server/src/main/resources
+2019-02-05 15:44:22,321 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /productvalidation-server/src/test/java
+2019-02-05 15:44:22,321 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /productvalidation-server/src/test/resources
+2019-02-05 15:44:31,732 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-core: com.cap:productvalidation-core:0.0.1 with classifier  to /productvalidation-core/eclipse-target/classes
+2019-02-05 15:44:31,732 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier  to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:32,867 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 21 sec
+2019-02-05 15:44:40,752 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:40,753 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\main\resources
+2019-02-05 15:44:40,755 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:40,755 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\test\resources
+2019-02-05 15:44:48,581 [Worker-15: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier  to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:49,531 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:49,610 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:44:49,931 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:49,937 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-05 15:44:53,573 [Worker-15: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-core: com.cap:productvalidation-core:0.0.1 with classifier  to /productvalidation-core/eclipse-target/classes
+2019-02-05 15:44:53,573 [Worker-15: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier  to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:54,424 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:54,424 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-05 15:44:54,459 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\server\${js.client.dir}\dist
+2019-02-05 15:44:54,461 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:44:54,461 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:44:58,055 [Worker-8: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:44:58,899 [Worker-8: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:46:47,394 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:47,441 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:46:47,712 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:47,712 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:46:53,308 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:53,357 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:46:53,610 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:53,611 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:46:57,839 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:57,874 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:46:58,012 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:46:58,012 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:47:06,318 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:06,369 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:47:06,684 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:06,684 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:47:34,725 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:34,763 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:47:34,931 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:34,931 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:47:46,056 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:46,088 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:47:46,265 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:47:46,265 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:48:11,051 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:11,096 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:48:11,317 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:11,317 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:48:17,525 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:17,572 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:48:17,752 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:17,752 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:48:28,154 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:28,224 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:48:28,437 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:28,438 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:48:59,244 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:59,277 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:48:59,505 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:48:59,505 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:49:02,772 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:02,804 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:49:02,957 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:02,957 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:49:14,638 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:14,675 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:49:14,876 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:14,876 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:49:40,174 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:40,240 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:49:40,459 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:49:40,459 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:14,826 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:14,868 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:15,099 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:15,099 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:20,146 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:20,173 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:20,295 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:20,295 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:31,746 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:31,794 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:32,017 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:32,017 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:35,773 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:35,799 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:35,923 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:35,923 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:46,762 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:46,806 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:46,956 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:46,956 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:52:54,464 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:54,496 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:52:54,631 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:52:54,631 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:53:01,227 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:01,272 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:53:01,457 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:01,457 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:53:10,494 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:10,535 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:53:10,710 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:10,710 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:53:18,273 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:18,319 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:53:18,487 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:53:18,488 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:56:00,181 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:00,181 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\main\resources
+2019-02-05 15:56:00,182 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:00,183 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\test\resources
+2019-02-05 15:56:02,310 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:02,354 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:56:02,585 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:02,585 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:56:42,174 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:42,174 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\main\resources
+2019-02-05 15:56:42,175 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:42,175 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\test\resources
+2019-02-05 15:56:43,689 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:43,730 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:56:43,863 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:56:43,864 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:57:08,202 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:08,203 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\main\resources
+2019-02-05 15:57:08,205 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:08,205 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\test\resources
+2019-02-05 15:57:09,981 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:10,014 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:57:10,243 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:10,243 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:57:52,107 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:52,107 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\main\resources
+2019-02-05 15:57:52,108 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:52,108 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ymouttal\Desktop\yassine\work\public\devonfw\workspace\Devon-dist_3.0.0\workspaces\productvalidation\productvalidation\api\src\test\resources
+2019-02-05 15:57:53,461 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:53,509 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:57:53,742 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:57:53,743 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:59:07,986 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:59:08,050 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 27 resources
+2019-02-05 15:59:08,206 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 15:59:08,206 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 15:59:23,615 [Worker-18: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes
+2019-02-05 15:59:24,247 [Worker-18: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes
+2019-02-05 16:01:08,160 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 16:01:08,163 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-05 16:01:08,172 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-05 16:01:08,172 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-05 16:01:13,584 [Worker-2: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes
+2019-02-05 16:01:14,244 [Worker-2: Launching SpringBootApp] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/productvalidation-api: com.cap:productvalidation-api:0.0.1 with classifier null to /productvalidation-api/eclipse-target/classes

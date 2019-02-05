@@ -1,0 +1,29 @@
+package com.cap.productvalidation.testscasesmanagement.logic.api.usecase;
+
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesEto;
+
+/**
+ * Interface of UcManageTestscases to centralize documentation and signatures of
+ * methods.
+ */
+public interface UcManageTestscases {
+
+	/**
+	 * Deletes a testscases from the database by its id 'testscasesId'.
+	 *
+	 * @param testscasesId Id of the testscases to delete
+	 * @return boolean <code>true</code> if the testscases can be deleted,
+	 *         <code>false</code> otherwise
+	 */
+	boolean deleteTestscases(long testscasesId);
+
+	/**
+	 * Saves a testscases and store it in the database.
+	 *
+	 * @param testscases the {@link TestscasesEto} to create.
+	 * @return the new {@link TestscasesEto} that has been saved with ID and
+	 *         version.
+	 */
+	TestscasesEto saveTestscases(TestscasesEto testscases);
+
+}

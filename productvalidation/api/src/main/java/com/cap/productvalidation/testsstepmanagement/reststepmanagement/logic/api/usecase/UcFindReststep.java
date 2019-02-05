@@ -1,0 +1,28 @@
+package com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.usecase;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepEto;
+import com.cap.productvalidation.testsstepmanagement.reststepmanagement.logic.api.to.ReststepSearchCriteriaTo;
+
+public interface UcFindReststep {
+
+	/**
+	 * Returns a Reststep by its id 'id'.
+	 *
+	 * @param id The id 'id' of the Reststep.
+	 * @return The {@link ReststepEto} with id 'id'
+	 */
+	ReststepEto findReststep(long id);
+
+	/**
+	 * Returns a paginated list of Reststeps matching the search criteria.
+	 *
+	 * @param criteria the {@link ReststepSearchCriteriaTo}.
+	 * @return the {@link List} of matching {@link ReststepEto}s.
+	 */
+	Page<ReststepEto> findReststeps(ReststepSearchCriteriaTo criteria);
+
+}

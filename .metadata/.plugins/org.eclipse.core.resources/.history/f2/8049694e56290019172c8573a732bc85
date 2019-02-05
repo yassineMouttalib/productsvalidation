@@ -1,0 +1,26 @@
+package com.cap.productvalidation.testsstepmanagement.assertstepmanagement.logic.base.usecase;
+
+import javax.inject.Inject;
+
+import com.cap.productvalidation.testsstepmanagement.assertstepmanagement.dataaccess.api.repo.AssertstepRepository;
+import com.cap.productvalidation.testsstepmanagement.general.logic.base.AbstractUc;
+
+/**
+ * Abstract use case for Assertsteps, which provides access to the commonly necessary data access objects.
+ */
+public class AbstractAssertstepUc extends AbstractUc {
+
+	  /** @see #getAssertstepRepository() */
+	  @Inject
+    private AssertstepRepository assertstepRepository;
+
+    /**
+     * Returns the field 'assertstepRepository'.
+     * @return the {@link AssertstepRepository} instance.
+     */
+    public AssertstepRepository getAssertstepRepository() {
+
+      return this.assertstepRepository;
+    }
+
+}

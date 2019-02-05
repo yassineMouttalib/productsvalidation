@@ -1,0 +1,49 @@
+package com.cap.productvalidation.testscasesmanagement.logic.impl.usecase;
+
+import java.util.Objects;
+
+import javax.inject.Named;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
+import com.cap.productvalidation.testscasesmanagement.dataaccess.api.TestscasesEntity;
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesEto;
+import com.cap.productvalidation.testscasesmanagement.logic.api.usecase.UcManageTestscases;
+import com.cap.productvalidation.testscasesmanagement.logic.base.usecase.AbstractTestscasesUc;
+
+/**
+ * Use case implementation for modifying and deleting Testscasess
+ */
+@Named
+@Validated
+@Transactional
+public class UcManageTestscasesImpl extends AbstractTestscasesUc implements UcManageTestscases {
+
+	/** Logger instance. */
+	private static final Logger LOG = LoggerFactory.getLogger(UcManageTestscasesImpl.class);
+
+	@Override
+	public boolean deleteTestscases(long testscasesId) {
+
+		TestscasesEntity testscases = getTestscasesRepository().find(testscasesId);
+		getTestscasesRepository().delete(testscases);
+		LOG.debug("The testscases with id '{}' has been deleted.", testscasesId);
+		return true;
+	}
+
+	@Override
+	public TestscasesEto saveTestscases(TestscasesEto testscases) {
+
+		Objects.requireNonNull(testscases, "testscases");
+
+		TestscasesEntity testscasesEntity = getBeanMapper().map(testscases, TestscasesEntity.class);
+
+		// initialize, validate testscasesEntity here if necessary
+		TestscasesEntity resultEntity = getTestscasesRepository().save(testscasesEntity);
+		LOG.debug("Testscases with id '{}' has been created.", resultEntity.getId());
+		return getBeanMapper().map(resultEntity, TestscasesEto.class);
+	}
+}

@@ -1,0 +1,49 @@
+package com.cap.productvalidation.testscasesmanagement.logic.impl.usecase;
+
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesEto;
+import com.cap.productvalidation.testscasesmanagement.logic.api.usecase.UcFindTestscases;
+import com.cap.productvalidation.testscasesmanagement.logic.base.usecase.AbstractTestscasesUc;
+import com.cap.productvalidation.testscasesmanagement.dataaccess.api.TestscasesEntity;
+import com.cap.productvalidation.testscasesmanagement.logic.api.to.TestscasesSearchCriteriaTo;
+import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
+
+import javax.inject.Named;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * Use case implementation for searching, filtering and getting Testscasess
+ */
+@Named
+@Validated
+@Transactional
+public class UcFindTestscasesImpl extends AbstractTestscasesUc implements UcFindTestscases {
+
+	  /** Logger instance. */
+    private static final Logger LOG = LoggerFactory.getLogger(UcFindTestscasesImpl.class);
+
+
+    @Override
+    public TestscasesEto findTestscases(long id) {
+      LOG.debug("Get Testscases with id {} from database.", id);
+      Optional<TestscasesEntity> foundEntity = getTestscasesRepository().findById(id);
+      if (foundEntity.isPresent())
+        return getBeanMapper().map(foundEntity.get(), TestscasesEto.class);
+      else
+        return null;
+    }
+
+    @Override
+    public Page<TestscasesEto> findTestscasess(TestscasesSearchCriteriaTo criteria) {
+      Page<TestscasesEntity> testscasess = getTestscasesRepository().findByCriteria(criteria);
+    return mapPaginatedEntityList(testscasess, TestscasesEto.class);
+  }
+
+}
